@@ -1,10 +1,6 @@
 import http, { request } from "http";
 import route from "./routes.mjs";
 
-/*const server = http.createServer((request, response) => {
-    getMethod(request, response)
-});*/
-
 const server = http.createServer(async (request, response) => {
     let body = ""
 
