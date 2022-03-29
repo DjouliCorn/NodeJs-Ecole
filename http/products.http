@@ -1,0 +1,19 @@
+###
+# GET all products 
+GET http://localhost:3000/products HTTP/1.1
+
+###
+# GET a product by it name
+GET http://localhost:3000/products/pomme HTTP/1.1
+
+###
+#
+POST http://localhost:3000/products HTTP/1.1
+content-type: application/json
+
+{
+    "name": "kiwi",
+    "quantity": 40
+} 
+
+

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "pomme",
+    "quantity": 98
+  },
+  {
+    "name": "citron",
+    "quantity": 168
+  },
+  {
+    "name": "kiwi",
+    "quantity": 80
+  }
+]
