@@ -11,7 +11,7 @@ app.use(bodyParser.json())
 app.use(morgan('tiny'))
 app.use(router)
 
-app.listen(port, host);
+app.listen(port, "0.0.0.0");
 console.log("\x1b[36m%s\x1b[0m", `\nListening at http://${host}:${port}`);
 
 
