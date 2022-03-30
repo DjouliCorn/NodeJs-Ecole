@@ -10,5 +10,9 @@
   {
     "name": "kiwi",
     "quantity": 5
+  },
+  {
+    "name": "Blueberry",
+    "quantity": 80
   }
 ]

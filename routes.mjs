@@ -33,52 +33,20 @@ const postMethod = (request) => {
 
 const router = express.Router()
 
-
-router.get('/about', function(req, res) {
-    console.log(req)
-    res.send('About birds');
-  });
-
-  router.post('/about', function(req, res) {
-    add()
-    res.send('About birds');
-  });
-  router.get('/about:name', function(req, res) {
-      const name = req.params.name
-      const result = JSON.stringify(getByName(name));
-    res.send(result);
-  });
-
-
-
-
-
-router.get('/products', function (req, res) {
-    let getUrl = req.url.split("/")
-        if(getUrl[1] === "products") {
-            if(getUrl[2]){
-                req.body = JSON.stringify(getByName(getUrl[2]));
-            } else {
-                req.body = JSON.stringify(getAll());
-            }
-        }
-    res.send(req.body)
+router.post('/products', function (req, res) {
+    const {name, quantity} = req.body
+    res.send(add(name, quantity));
 });
 
+router.get('/products', function (req, res) {
+    req.body = JSON.stringify(getAll())
+    res.send(req.body)
+})
 
-const postMethod = (request) => {
-    let body = ""
+router.get('/products/:name', function (req, res) {
+    const name = req.params.name
+    req.body = JSON.stringify(getByName(name));
+    res.send(req.body)
+})
 
-    return new Promise((resolve, reject) => {
-        request.on("data", (chunk) => {
-            body += chunk.toString();
-        });
-        request.on("end", () => {
-            return resolve(JSON.parse(body));
-        });
-    });
-};
-
-module.exports = router;
-
-//export default route;
+export default router;
