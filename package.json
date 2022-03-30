@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.mjs --ignore 'products.json'"
+    "dev": "nodemon index.mjs --ignore 'products.json'",
+    "start": "node index.mjs"
   },
   "keywords": [],
   "author": "",
