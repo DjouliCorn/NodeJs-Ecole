@@ -12,8 +12,11 @@ POST http://localhost:3000/products HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Blueberry",
+    "name": "pomme",
     "quantity": 40
 } 
 
+###
+#DELETE a product
+DELETE http://localhost:3000/products/pomme?quantity=20 HTTP/1.1
 

@@ -19,4 +19,17 @@ router.get('/products/:name', function (req, res) {
     res.send(req.body)
 })
 
+router.delete('/products/:name', function (req, res) {
+    const name = req.params.name
+    const quantity = req.query.quantity
+    if (quantity) {
+        console.log("here")
+        res.send(remove(name, quantity))
+    } else {
+        console.log("there")
+        res.send(remove(name, quantity));
+    }
+
+})
+
 export default router;

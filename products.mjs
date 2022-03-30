@@ -114,7 +114,7 @@ const remove = (name, quantity) => {
 
     // supprime le produit
     products = products.filter((e) => e.name !== name);
-    console.log(`${p.name} supprimé(e)s, 0 stock`);
+    console.log(`${name} supprimé(e)s, 0 stock`);
     writeProducts();
     return true;
   }
