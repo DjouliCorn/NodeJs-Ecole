@@ -4,7 +4,7 @@ let url = 'http://localhost:3000/products'
 
 function getProducts() {
     axios.get(url).then(function (response) {
-        console.log("getProducts :")
+        console.log(`\n#getProducts : `)
         console.log(response.data)
     }).catch(function (error) {
         console.error(error)
@@ -18,7 +18,7 @@ function addProduct() {
         name: name,
         quantity: quantity
     }).then(function () {
-        console.log("addProducts :")
+        console.log(`\n#addProduct : `)
         console.log(`${quantity} ${name} ajouté(e)(s)`)
     }).catch(function (error) {
         console.error(error)
@@ -28,7 +28,7 @@ function addProduct() {
 async function getProductsAsync() {
     try {
         const response = await axios.get(url)
-        console.log("getProductsAsync : ")
+        console.log(`\n#getProductsAsync : `)
         console.log(response.data)
     } catch (error) {
         console.error(error)
