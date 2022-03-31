@@ -12,12 +12,14 @@ function getProducts() {
 }
 
 function addProduct() {
+    const name = "pêche"
+    const quantity = 12
     axios.post(url, {
-        name: "pêche",
-        quantity: 12
-    }).then(function (response) {
+        name: name,
+        quantity: quantity
+    }).then(function () {
         console.log("addProducts :")
-        console.log(response.data)
+        console.log(`${quantity} ${name} ajouté(e)(s)`)
     }).catch(function (error) {
         console.error(error)
     })
@@ -33,9 +35,11 @@ async function getProductsAsync() {
     }
 }
 
-getProductsAsync()
-
-
+(async () => {
+    getProducts();
+    addProduct();
+    getProductsAsync();
+})()
 
 //IIFE
 /*
