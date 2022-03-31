@@ -3,11 +3,18 @@ import axios from "axios"
 let url = 'http://localhost:3000/products'
 
 function getProducts() {
-    axios.get(url).then(function (response) {
+    /*axios.get(url).then(function (response) {
         console.log(`\n#getProducts : `)
         console.log(response.data)
     }).catch(function (error) {
         console.error(error)
+    })*/
+    return new Promise((resolve, reject) => {
+        axios.get(url).then(function (response) {
+            resolve(response.data)
+        }).catch(function (error) {
+            reject(error)
+        })
     })
 }
 
@@ -37,7 +44,10 @@ async function getProductsAsync() {
 
 //IIFE Immediatly Invoked Function Expression : appelle dans l'ordre et en asynchrone les fonctions
 (async () => {
-    getProducts();
+    await getProducts().then((value) => {
+        console.log(`\n#getProducts : `)
+        console.log(value)
+    });
     addProduct();
     getProductsAsync();
 })()
