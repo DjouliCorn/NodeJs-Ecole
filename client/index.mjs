@@ -35,15 +35,9 @@ async function getProductsAsync() {
     }
 }
 
+//IIFE Immediatly Invoked Function Expression : appelle dans l'ordre et en asynchrone les fonctions
 (async () => {
     getProducts();
     addProduct();
     getProductsAsync();
 })()
-
-//IIFE
-/*
-(async()=>{
-
-})()
-*/
