@@ -25,7 +25,7 @@ function addProduct() {
         name: name,
         quantity: quantity
     }).then(function () {
-        console.log(`\n#addProduct : `)
+        console.log(`\n# addProduct : `)
         console.log(`${quantity} ${name} ajouté(e)(s)`)
     }).catch(function (error) {
         console.error(error)
@@ -35,7 +35,7 @@ function addProduct() {
 async function getProductsAsync() {
     try {
         const response = await axios.get(url)
-        console.log(`\n#getProductsAsync : `)
+        console.log(`\n# getProductsAsync : `)
         console.log(response.data)
     } catch (error) {
         console.error(error)
@@ -45,7 +45,7 @@ async function getProductsAsync() {
 //IIFE Immediatly Invoked Function Expression : appelle dans l'ordre et en asynchrone les fonctions
 (async () => {
     await getProducts().then((value) => {
-        console.log(`\n#getProducts : `)
+        console.log(`\n# getProducts : `)
         console.log(value)
     });
     addProduct();
