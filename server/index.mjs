@@ -5,10 +5,11 @@ import morgan from 'morgan'
 import swaggerUI from 'swagger-ui-express'
 import docs from './docs/index.mjs'
 
+var app = express()
+/* eslint-disable no-undef*/
 const port = process.env.PORT || 3000
 const host = '127.0.0.1'
 
-var app = express()
 app.use(bodyParser.json())
 app.use(morgan('tiny'))
 app.use(router)

@@ -1,5 +1,5 @@
 import express from 'express'
-import { add, getAll, getByName, update, remove } from './products.mjs'
+import { add, getAll, getByName, remove } from './products.mjs'
 
 const router = express.Router()
 
