@@ -1,7 +1,13 @@
 import express from 'express'
 import { add, getAll, getByName, remove } from './products.mjs'
+import { auth } from './auth/index.mjs'
 
 const router = express.Router()
+
+router.post('/auth', function (req, res) {
+  const { name, password } = req.body
+  res.send(auth(name, password))
+})
 
 router.post('/products', function (req, res) {
   const { name, quantity } = req.body
